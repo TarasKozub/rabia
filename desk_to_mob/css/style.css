@@ -43,6 +43,28 @@ body, html{
             }
 
         .header-logo-img{}
+    .header-mobile-menu{
+        display: none;
+        width: 100%;
+        
+    }
+        .mobile-menu-link{
+            position: absolute;
+            top: 2%;
+            right: 3%;
+            display: block;
+            float: right;
+            height: 40px;
+            width: 40px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+        .mobile-menu{
+            font-size: 2rem;
+            position: absolute;
+            top: 14%;
+            right: 20%;
+        }
     .header-menu{}
         .menu-list{
             margin: 0;
@@ -268,6 +290,7 @@ body, html{
                     text-align: left;
                     text-decoration: none;
                     font-size: 1rem;
+                    color: #333333;
                 }
             .footer-contacts-list-item:last-child > .footer-contacts-list-item-title{
                 width: 100%;
@@ -349,5 +372,18 @@ body, html{
     .col-right-content{
         width: 100%;
         padding: 0 2%;
+    }
+}
+
+@media all and (max-width: 700px){
+    .header-menu{
+        display: none;
+    }
+    .header-mobile-menu{
+        display: block;
+    }
+    .footer-contacts-list{
+        margin-bottom: 13%;
+        margin-top: 0;
     }
 }
