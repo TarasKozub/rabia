@@ -20,13 +20,12 @@ body, html{
 }
 
 .header{
-    position: fixed;
-    top: 20%;
-    left: 40%;
-    width: 20%;
+    position: relative;
     text-align: center;
+    margin: 3% 0;
 }
-    .header-logo{}
+    .header-logo{
+    }
         .header-logo:hover{
             animation-name: logo;
             animation-duration: 0.2s;
@@ -44,9 +43,6 @@ body, html{
 
         .header-logo-img{}
     .header-mobile-menu{
-        display: none;
-        width: 100%;
-        
     }
         .mobile-menu-link{
             position: absolute;
@@ -67,13 +63,13 @@ body, html{
         }
     .header-menu{}
         .menu-list{
+            display: none;
             margin: 0;
             padding: 0;
             list-style: none;
         }
             .menu-list-item{
                 display: inline-block;
-                width: 100%;
             }
                 .menu-list-item-link{
                     position: relative;
@@ -86,28 +82,10 @@ body, html{
                     padding: 0 20px;
                 }
                     .menu-list-item-link:hover::before{
-                        content: "";
-                        position: absolute;
-                        top: 0px;
-                        left: 0px;
-                        height: 1px;
-                        width: 100%;
-                        background-color: #111111;
-                        animation-name: move;
-                        animation-duration: 0.5s;
-                        animation-timing-function: linear;
+
                     }
                     .menu-list-item-link:hover::after{
-                        content: "";
-                        position: absolute;
-                        bottom: 0px;
-                        right: 0px;
-                        height: 1px;
-                        width: 100%;
-                        background-color: #111111;
-                        animation-name: move;
-                        animation-duration: 0.5s;
-                        animation-timing-function: linear;
+
                     }
                     .menu-list-item-link:hover{
                         
@@ -122,6 +100,7 @@ body, html{
                         }
 
 .col-left{
+    display: none;
     margin: 5% 0 0;
     padding: 0;
     width: 40%;
@@ -186,16 +165,10 @@ body, html{
 
 
 .col-right{
-    margin: 5% 0 0;
-    padding: 0;
-    width: 40%;
-    float: right;
+    width: 100%;
 }
     .col-right-content{
-        margin: 0;
-        padding: 0;
-        width: 85%;
-        float: left;
+        width: 100%;
     }
         .col-right-content-list{
             margin: 0;
@@ -206,6 +179,7 @@ body, html{
                 width: 100%;
                 border-bottom: 1px dotted;
                 margin-bottom: 40px;
+                padding: 0 2%;
             }
                 .col-right-content-image{
                     width: 100%;
@@ -213,8 +187,8 @@ body, html{
                 }
                 .col-right-content-title{
                     margin: 10px 0 0;
-                    color: #333333;
                     font-size: 1.2rem;
+                    color: #333333;
                     font-weight: 500;
                 }
                     .col-right-content-title > a{
@@ -230,7 +204,6 @@ body, html{
             .col-right-footer-list{
                 margin: 0;
                 padding: 0;
-                list-style: none;
             }
                 .col-right-footer-list-item{
                     position: relative;
@@ -264,15 +237,16 @@ body, html{
 .footer{
     width: 100%;
     float: left;
+    margin-bottom: 10%;
 }
     .footer-contacts{
         float: left;
         width: 70%;
-        margin: 0;
-        padding: 0;
     }
         .footer-contacts-list{
             list-style: none;
+            margin: 0;
+            padding: 3%;
         }
             .footer-contacts-list-item{
                 padding: 2% 0 0;
@@ -298,12 +272,14 @@ body, html{
                 width: 100%;
             }
     .footer-social{
+        display: none;
         float: left;
         width: 30%;
     }
         .footer-social-list{
             list-style: none;
             text-align: right;
+            margin: 7% 10% 0 0;
         }
             .footer-social-list-item{
                 display: inline-block;
@@ -347,10 +323,14 @@ body, html{
 
 
 
-@media all and (max-width: 800px) {
+@media all and (min-width: 700px) {
     .header{
-        position: static;
-        width: 100%;
+    }
+    .header-mobile-menu{
+        display: none;
+    }
+    .menu-list{
+        display: block;
     }
     .menu-list-item{
         width: auto;
@@ -360,7 +340,7 @@ body, html{
         color: red;
     }
     .menu-list-item-link:hover::before, .menu-list-item-link:hover::after{
-       height: 0;
+        height: 0;
         width: 0;
     }
 
@@ -376,16 +356,79 @@ body, html{
     }
 }
 
-@media all and (max-width: 700px){
-    .header-menu{
-        display: none;
-    }
-    .header-mobile-menu{
+@media all and (min-width: 900px){
+    .col-left{
         display: block;
     }
-    .footer-contacts-list{
-        margin-bottom: 13%;
-        margin-top: 0;
+    .header{
+        position: fixed;
+        top: 20%;
+        left: 40%;
+        width: 20%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
     }
-
+    .menu-list-item{
+        display: inline-block;
+        width: 100%;
+        margin: 2% auto 0;
+    }
+    .col-right{
+        margin: 5% 0 0;
+        padding: 0;
+        width: 40%;
+        float: right;
+    }
+    .col-right-content{
+        margin: 0;
+        padding: 0;
+        width: 85%;
+        float: left;
+    }
+    .menu-list-item-link:hover::before{
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 1px;
+        width: 100%;
+        background-color: #111111;
+        animation-name: move;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+    }
+    .menu-list-item-link:hover::after{
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        height: 1px;
+        width: 100%;
+        background-color: #111111;
+        animation-name: move;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+    }
+    .menu-list-item-link:hover{
+        color: #333333;
+    }
+    @keyframes move {
+        from{
+            width: 0%;
+        }
+        to{
+            width: 100%;
+        }
+    }
+    .footer{
+        margin: 0;
+        padding: 0;
+    }
+    .footer-contacts{
+        width: 70%;
+    }
+    .footer-social{
+        display: block;
+    }
 }
